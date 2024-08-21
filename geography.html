@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Geography Quiz</title>
+        <link rel="stylesheet" href="header-styles.css">
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                overflow-x: hidden;
+                background-image: url("Images/pexels-lucadross-5976404.jpg");
+                background-size: contain;
+                background-attachment: fixed;
+                font-family: cursive;
+                color: whitesmoke;
+            }
+
+            .header-01 section
+            {
+                color: whitesmoke;
+            }
+
+            .main-01
+            {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main-01 form div
+            {
+                margin-top: 3em;
+            }
+
+            input[type="radio"]
+            {
+                accent-color: crimson;
+            }
+
+            .btn-3
+            {
+                background-color: black;
+                color: pink;
+                padding: 0.5em 1em;
+                border: 1px solid;
+                border-radius: 2em 1em 2em 0em;
+                margin: 1.5em 0;
+            }
+
+            .btn-3:hover 
+            {
+                box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+            }
+        </style>
+        <script>
+          function check() {
+            var score = 0;
+            var correctAnswers = {
+              question1: "Mount Everest",
+              question2: "Nile",
+              question3: "Australia",
+              question4: "Amazon Rainforest",
+              question5: "Russia",
+              question6: "Greenland",
+              question7: "Antarctica",
+              question8: "Tokyo",
+              question9: "Sahara",
+              question10: "Asia"
+            };
+            
+            for (var i = 1; i <= 10; i++) {
+              var qName = "question" + i;
+              var selectedOption = document.querySelector('input[name="' + qName + '"]:checked');
+              if (selectedOption && selectedOption.value === correctAnswers[qName]) {
+                score++;
+              }
+            }
+            
+            alert("Your Score is " + score + " out of 10");
+            
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+          }
+        </script>
+    </head>
+    <body>
+        <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="index.html" target="_blank"> Home </a> </li>
+                    <li> <a href="about-us.html" target="_blank"> About Us </a> </li>
+                    <li> <a href="contact-us.html" target="_blank"> Contact Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-01">
+            <form name="quiz" id="quiz">
+              <!-- Geography Quiz -->
+              <div>
+                <p>1. What is the highest mountain in the world?</p>
+                <p><input type="radio" name="question1" value="Kangchenjunga"> A. Kangchenjunga</p>
+                <p><input type="radio" name="question1" value="Lhotse"> B. Lhotse</p>
+                <p><input type="radio" name="question1" value="Mount Everest"> C. Mount Everest</p>
+                <p><input type="radio" name="question1" value="K2"> D. K2</p>
+              </div>
+          
+              <div>
+                <p>2. What is the longest river in the world?</p>
+                <p><input type="radio" name="question2" value="Amazon"> A. Amazon</p>
+                <p><input type="radio" name="question2" value="Nile"> B. Nile</p>
+                <p><input type="radio" name="question2" value="Mississippi"> C. Mississippi</p>
+                <p><input type="radio" name="question2" value="Yangtze"> D. Yangtze</p>
+              </div>
+          
+              <div>
+                <p>3. Which country is known as the "Land Down Under"?</p>
+                <p><input type="radio" name="question3" value="South Africa"> A. South Africa</p>
+                <p><input type="radio" name="question3" value="New Zealand"> B. New Zealand</p>
+                <p><input type="radio" name="question3" value="Argentina"> C. Argentina</p>
+                <p><input type="radio" name="question3" value="Australia"> D. Australia</p>
+              </div>
+          
+              <div>
+                <p>4. What is the largest rainforest in the world?</p>
+                <p><input type="radio" name="question4" value="Congo Rainforest"> A. Congo Rainforest</p>
+                <p><input type="radio" name="question4" value="Valdivian Temperate Rainforest"> B. Valdivian Temperate Rainforest</p>
+                <p><input type="radio" name="question4" value="Daintree Rainforest"> C. Daintree Rainforest</p>
+                <p><input type="radio" name="question4" value="Amazon Rainforest"> D. Amazon Rainforest</p>
+              </div>
+          
+              <div>
+                <p>5. Which country has the largest land area?</p>
+                <p><input type="radio" name="question5" value="China"> A. China</p>
+                <p><input type="radio" name="question5" value="United States"> B. United States</p>
+                <p><input type="radio" name="question5" value="Canada"> C. Canada</p>
+                <p><input type="radio" name="question5" value="Russia"> D. Russia</p>
+              </div>
+          
+              <div>
+                <p>6. What is the largest island in the world?</p>
+                <p><input type="radio" name="question6" value="Borneo"> A. Borneo</p>
+                <p><input type="radio" name="question6" value="Madagascar"> B. Madagascar</p>
+                <p><input type="radio" name="question6" value="New Guinea"> C. New Guinea</p>
+                <p><input type="radio" name="question6" value="Greenland"> D. Greenland</p>
+              </div>
+          
+              <div>
+                <p>7. Which continent is known for having no countries with a permanent population?</p>
+                <p><input type="radio" name="question7" value="South America"> A. South America</p>
+                <p><input type="radio" name="question7" value="Africa"> B. Africa</p>
+                <p><input type="radio" name="question7" value="Antarctica"> C. Antarctica</p>
+                <p><input type="radio" name="question7" value="Australia"> D. Australia</p>
+              </div>
+          
+              <div>
+                <p>8. What is the capital city of Japan?</p>
+                <p><input type="radio" name="question8" value="Kyoto"> A. Kyoto</p>
+                <p><input type="radio" name="question8" value="Hiroshima"> B. Hiroshima</p>
+                <p><input type="radio" name="question8" value="Osaka"> C. Osaka</p>
+                <p><input type="radio" name="question8" value="Tokyo"> D. Tokyo</p>
+              </div>
+          
+              <div>
+                <p>9. What is the largest hot desert in the world?</p>
+                <p><input type="radio" name="question9" value="Gobi Desert"> A. Gobi Desert</p>
+                <p><input type="radio" name="question9" value="Arabian Desert"> B. Arabian Desert</p>
+                <p><input type="radio" name="question9" value="Sahara"> C. Sahara</p>
+                <p><input type="radio" name="question9" value="Kalahari Desert"> D. Kalahari Desert</p>
+              </div>
+          
+              <div>
+                <p>10. Which is the largest continent by area?</p>
+                <p><input type="radio" name="question10" value="Africa"> A. Africa</p>
+                <p><input type="radio" name="question10" value="Asia"> B. Asia</p>
+                <p><input type="radio" name="question10" value="Europe"> C. Europe</p>
+                <p><input type="radio" name="question10" value="North America"> D. North America</p>
+              </div>
+          
+              <button type="button" class="btn-3" onclick="check()">Submit</button>
+            </form>
+        </main>
+        <script>
+          function openSignupPage()
+          {
+              window.location.href = "signup.html";
+          }
+
+          function openLoginPage()
+          {
+              window.location.href = "login.html";
+          }
+      </script>
+    </body>
+</html>

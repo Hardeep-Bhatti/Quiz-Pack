@@ -1,0 +1,104 @@
+.header-01
+{
+    height: 3.5em;
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header-01 section
+{
+    display: flex;
+    gap: 1em;
+}
+            
+.header-01 nav ul
+{
+    list-style: none;
+    display: flex;
+    gap: 5em;
+}
+
+.header-01 nav ul li a
+{
+    text-decoration: none;
+    color: whitesmoke;
+    transition: all 0.5s ease-in-out;
+}
+
+.header-01 nav ul li
+{
+    position: relative;
+    background-color: black;
+}
+
+@property --angle
+{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.header-01 nav ul li::before,
+.header-01 nav ul li::after
+{
+    content: '';
+    height: 100%;
+    width: 103%;
+    border-radius: 0.8em;
+    background-image: conic-gradient(from var(--angle) at center, transparent 0%, #a8edea, #fed6e3, #a8edea);
+    position: absolute;
+    top: 55%;
+    left: 53%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: slider 3s linear infinite both;
+}
+
+.header-01 nav ul button
+{
+    font-family: cursive;
+    font-weight: bold;
+    padding: 0 1em;
+    border: none;
+    color: whitesmoke;
+    background-color: black;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+}
+
+.header-01 nav ul button::before,
+.header-01 nav ul button::after
+{
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle) at top right, transparent 1%, #d9afd9 0%, #97d9e1 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    padding: 0.2em;
+    animation: slider 3s linear infinite both;
+}
+
+.header-01 nav ul li a:hover,
+.header-01 nav ul button:hover
+{
+    color: rgb(96, 201, 243);
+}
+
+@keyframes slider
+{
+    from
+    {
+        --angle: 0deg;
+    }
+
+    to
+    {
+        --angle: 360deg;
+    }
+}

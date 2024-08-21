@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Quiz-Pack </title>
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                font-family: cursive;
+                color: whitesmoke;
+                background-image: url("Images/pexels-enric-cruz-lopez-6272237.jpg");
+                background-size: cover;
+                padding: 1em 1em;
+            }
+
+            .header-01
+            {
+                height: 6%;
+                top: 0.5%;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .header-01 section
+            {
+                display: flex;
+                gap: 1em;
+            }
+            
+            .header-01 nav ul
+            {
+                list-style: none;
+                display: flex;
+                gap: 5em;
+            }
+
+            .header-01 nav ul li a
+            {
+                text-decoration: none;
+                color: whitesmoke;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .header-01 nav ul li
+            {
+                position: relative;
+                background-color: black;
+            }
+
+            @property --angle
+            {
+                syntax: "<angle>";
+                initial-value: 0deg;
+                inherits: false;
+            }
+
+            .header-01 nav ul li::before,
+            .header-01 nav ul li::after
+            {
+                content: '';
+                height: 100%;
+                width: 103%;
+                border-radius: 0.8em;
+                background-image: conic-gradient(from var(--angle) at center, transparent 0%, #a8edea, #fed6e3, #a8edea);
+                position: absolute;
+                top: 55%;
+                left: 53%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                animation: slider 3s linear infinite both;
+            }
+
+            .header-01 nav ul button
+            {
+                font-family: cursive;
+                font-weight: bold;
+                padding: 0 1em;
+                border: none;
+                color: whitesmoke;
+                background-color: black;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .header-01 nav ul button::before,
+            .header-01 nav ul button::after
+            {
+                content: '';
+                height: 100%;
+                width: 100%;
+                background-image: conic-gradient(from var(--angle) at top right, transparent 1%, #d9afd9 0%, #97d9e1 100%);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                padding: 0.2em;
+                animation: slider 3s linear infinite both;
+            }
+
+            .header-01 nav ul li a:hover,
+            .header-01 nav ul button:hover
+            {
+                color: rgb(96, 201, 243);
+            }
+
+            @keyframes slider
+            {
+                from
+                {
+                    --angle: 0deg;
+                }
+
+                to
+                {
+                    --angle: 360deg;
+                }
+            }
+
+            .main-02
+            {
+                width: 100%;
+                padding: 3em 1em;
+            }
+
+            .section-03
+            {
+                display: grid;
+                grid-template-rows: repeat(2, minmax(5vh, 1fr));
+                grid-template-columns: repeat(3, minmax(5vw, 1fr));
+                justify-items: center;
+                row-gap: 1em;
+            }
+
+            .section-04
+            {
+                background-image: url("Images/pexels-polina-tankilevitch-3735736.jpg");
+            }
+
+            .section-05
+            {
+                background-image: url("Images/pexels-ron-lach-9785602.jpg");
+            }
+
+            .section-06
+            {
+                background-image: url("Images/pexels-cottonbro-5184957.jpg");
+            }
+
+            .section-07
+            {
+                background-image: url("Images/egor-myznik-EZBfg-MjfQ0-unsplash.jpg");
+            }
+
+            .section-08
+            {
+                background-image: url("Images/pexels-thirdman-8926457.jpg");
+            }
+
+            .section-09
+            {
+                background-image: url("Images/annie-spratt-biVuafyC8oI-unsplash.jpg");
+            }
+
+            .section-04,
+            .section-05,
+            .section-06,
+            .section-07,
+            .section-08,
+            .section-09
+            {
+                background-size: contain;
+                background-repeat: no-repeat;
+                height: 37.9vh;
+                width: 12.67vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.5s linear;
+            }
+
+            .section-04:hover,
+            .section-05:hover,
+            .section-06:hover,
+            .section-07:hover,
+            .section-08:hover,
+            .section-09:hover
+            {
+                box-shadow:
+                0 0 0.5rem #fff,
+                0 0 0.5rem #fff,
+                0 0 0.5rem #fff,
+                0 0 0.5rem #d400ff,
+                0 0 0.5rem #d400ff,
+                0 0 0.5rem #d400ff,
+                0 0 0.5rem #d400ff,
+                0 0 0.5rem #d400ff;
+            }
+
+            .section-04 a,
+            .section-05 a,
+            .section-06 a,
+            .section-07 a,
+            .section-08 a,
+            .section-09 a
+            {
+                font-size: 1.5em;
+                text-decoration: none;
+                color: crimson;
+                text-shadow: 2px 2px 2px skyblue;
+            }
+        </style>
+    </head> 
+    <body>
+        <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="about-us.html" target="_blank"> About Us </a> </li>
+                    <li> <a href="contact-us.html" target="_blank"> Contact Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-02">
+            <section class="section-03">
+                <section class="section-04">
+                    <a href="chemistry.html" target="_blank"> Chemistry </a>
+                </section>
+                <section class="section-05">
+                    <a href="physics.html" target="_blank"> Physics </a>
+                </section>
+                <section class="section-06">
+                    <a href="mathematics.html" target="_blank"> Mathematics </a>
+                </section>
+                <section class="section-07">
+                    <a href="history.html" target="_blank"> History </a>
+                </section>
+                <section class="section-08">
+                    <a href="geography.html" target="_blank"> Geography </a>
+                </section>
+                <section class="section-09">
+                    <a href="biology.html" target="_blank"> Biology </a>
+                </section>            
+            </section>
+        </main>
+        <script>
+            function openSignupPage()
+            {
+                window.location.href = "signup.html";
+            }
+
+            function openLoginPage()
+            {
+                window.location.href = "login.html";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Quiz-Pack Info </title>
+        <link rel="stylesheet" href="header-styles.css">
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                background-image: url("Images/pexels-griffinw-26606136.jpg");
+                background-size: cover;
+                color: whitesmoke;
+                font-family: cursive;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+
+            .main-01
+            {
+                width: 100%;
+                display: grid;
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 0.5em;
+                justify-items: center;
+            }
+
+            .section-01 .p-01, .section-02 .p-02, .section-03 .p-03
+            {
+                padding: 0.8em;
+                text-shadow:  2px 2px 2px rgba(220, 20, 60, 1);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .section-01, .section-02, .section-03
+            {
+                background-image: url("Images/pexels-elina-araja-1743227-3339126.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin-top: 1.5em;
+                width: 23em;
+                text-align: center;
+                position: relative;
+            }
+
+            .section-03
+            {
+                height: 9.3em;
+            }
+
+            .section-01 .p-01:hover, .section-02 .p-02:hover, .section-03 .p-03:hover
+            {
+                text-shadow:  2px 2px 2px rgba(23, 197, 23);
+            }
+
+            @property --angle
+            {
+                syntax: "<angle>";
+                initial-value: 0deg;
+                inherits: false;
+            }
+
+            .section-01::before, .section-02::before, .section-03::before,
+            .section-01::after, .section-02::after, .section-03::after
+            {
+                content: '';
+                height: 100%;
+                width: 100%;
+                background-image: conic-gradient(from var(--angle), transparent 50%, #00dbde, #fc00ff, #00dbde);
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: -1;
+                padding: 0.1em;
+                animation: spin 3s linear infinite both;
+            }
+
+            .section-02::before,
+            .section-02::after
+            {
+                background-image: conic-gradient(from var(--angle), transparent 75%, #5271c4, #b19fff, #eca1fe, #5271c4);
+            }
+
+            .section-03::before,
+            .section-03::after
+            {
+                background-image: conic-gradient(from var(--angle), transparent 90%, #3d3393, #2b76b9, #2cacd1, #35eb93, #3d3393);
+            }
+
+            .section-01:hover::before, .section-02:hover::before, .section-03:hover::before,
+            .section-01:hover::after, .section-02:hover::after, .section-03:hover::after
+            {
+                animation-direction: reverse;
+            }
+
+            @keyframes spin
+            {
+                from
+                {
+                    --angle: 0deg;
+                }
+
+                to
+                {
+                    --angle: 360deg;
+                }
+            }
+        </style>
+    </head>
+    <body>
+                <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="index.html" target="_blank"> Home </a> </li>
+                    <li> <a href="contact-us.html" target="_blank"> Contact Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-01">
+            <section class="section-01">
+                <p class="p-01"> Welcome to Quiz-Pack, your ultimate destination for fun, challenging, and educational quizzes! Whether you’re a trivia enthusiast, a student looking to sharpen your knowledge, or simply someone who enjoys testing their wits, Quiz-Pack is the perfect place for you. With quizzes covering a wide range of subjects, there's always something new to explore. </p>
+            </section>
+            <section class="section-02">
+                <p class="p-02"> At Quiz-Pack, we believe that learning should never be boring. That’s why we’ve created a platform that combines entertainment with education, offering a wide variety of quizzes across different topics, from history and science to pop culture and sports. Our goal is to make learning engaging and accessible to everyone. </p>
+            </section>
+            <section class="section-03">
+                <p class="p-03"> Our mission is to provide a platform where learning and fun go hand in hand. We aim to create a community of quiz lovers who can share their knowledge, challenge their minds, and enjoy a rewarding experience. </p>
+            </section>
+        </main>
+        <script>
+            function openSignupPage()
+            {
+                window.location.href = "signup.html";
+            }
+
+            function openLoginPage()
+            {
+                window.location.href = "login.html";
+            }
+        </script>
+    </body>
+</html>

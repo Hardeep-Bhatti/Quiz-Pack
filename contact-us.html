@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Contact Us </title>
+        <link rel="stylesheet" href="header-styles.css">
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+                font-family: cursive;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                color: whitesmoke;
+                background-image: url("Images/pexels-griffinw-26606136.jpg");
+                background-size: cover;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+
+            .main-01
+            {
+                width: 100%;
+                display: grid;
+                grid-template-rows: 1fr 2fr 2fr;
+                grid-template-columns: repeat(1, minmax(10%, 1fr));
+                justify-items: center;
+                align-items: center;
+            }
+
+            .section-01, .section-02, .section-03
+            {
+                width: 43%;
+                position: relative;
+                background: transparent;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;
+                text-align: center;
+            }
+
+            .section-01 p, .section-02 p, .section-03 p
+            {
+                text-shadow:  2px 2px 2px rgba(220, 20, 60, 1);
+                transition: all 0.5s ease-in-out;
+            }
+
+            .section-01 p:hover, .section-02 p:hover, .section-03 p:hover
+            {
+                text-shadow:  2px 2px 2px rgba(23, 197, 23);
+            }
+
+            .section-03 form textarea
+            {
+                background: transparent;
+                border: 1px solid white;
+                color: whitesmoke;
+            }
+
+            .section-03 form button
+            {
+                padding: 0.5em 1.5em;
+                background-color: black;
+                border: 1px solid grey;
+                color: whitesmoke;
+                cursor: pointer;
+                position: relative;
+            }
+
+            .section-03 form button::before,
+            .section-03 form button::after
+            {
+                content: '';
+                height: 10%;
+                width: 10%;
+                border: 2px solid skyblue;
+                background-color: black;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                transition: left 0.5s linear;
+            }
+
+            .section-03 form button::before
+            {
+                top: 0%;
+                left: 80%;
+            }
+
+            .section-03 form button::after
+            {
+                top: 100%;
+                left: 20%;
+            }
+
+            .section-03 form button:hover
+            {
+                color: rgb(23, 197, 23);
+                border-color: rgb(23, 197, 23);
+                box-shadow: 0 0 35px rgb(23, 197, 23);
+            }
+
+            .section-03 form button:hover::before
+            {
+                left: 20%;
+            }
+
+            .section-03 form button:hover::after
+            {
+                left: 80%;
+            }
+
+            .section-03 form textarea:hover,
+            .section-03 form textarea:focus
+            {
+                border-color: deeppink;
+                box-shadow: 0 0 1.5em rgb(255, 105, 180) inset,
+                0 0 1.5em rgb(255, 105, 180);
+            }
+
+            .section-03 form textarea:focus
+            {
+                outline: none;
+            }
+
+            .section-01::before,
+            .section-02::before,
+            .section-03::before,
+            .section-01::after,
+            .section-02::after,
+            .section-03::after
+            {
+                content: '';
+                height: 1.5%;
+                width: 5%;
+                border: 2px solid skyblue;
+                position: absolute;
+            }
+
+            .section-01::before,
+            .section-02::before,
+            .section-03::before
+            {
+                top: -2%;
+                left: 80%;
+                animation: swipe1 6s linear infinite both;
+            }
+
+            .section-01::after,
+            .section-02::after,
+            .section-03::after
+            {
+                top: 102%;
+                left: 20%;
+                animation: swipe2 6s linear infinite both;
+            }
+
+            .section-01:hover::before,
+            .section-02:hover::before,
+            .section-03:hover::before,
+            .section-01:hover::after,
+            .section-02:hover::after,
+            .section-03:hover::after
+            {
+                border-color: rgb(23, 197, 23);
+            }
+
+            @keyframes swipe1
+            {
+                0%
+                {
+                    left: 80%;
+                }
+
+                50%
+                {
+                    left: 20%;
+                }
+
+                100%
+                {
+                    left: 80%;
+                }
+            }
+
+            @keyframes swipe2
+            {
+                0%
+                {
+                    left: 20%;
+                }
+
+                50%
+                {
+                    left: 80%;
+                }
+
+                100%
+                {
+                    left: 20%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="index.html" target="_blank"> Home </a> </li>
+                    <li> <a href="about-us.html" target="_blank"> About Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+        <main class="main-01">
+            <section class="section-01">
+                <p> We'd love to hear from you! Whether you have a question, feedback, or a suggestion, your thoughts are important to us. At Quiz-Pack, we’re dedicated to creating the best experience for our users, and your input helps us achieve that. </p>
+            </section>
+            <section class="section-02">
+                <p> If you have any inquiries, encounter issues, or just want to share your quiz ideas, please reach out to us using the form below or through the following methods : <br>
+                    Email : darknessintheforest@quiz-pack.com <br>
+                    Phone : +105-103301 <br>
+                    Mailing Address : <br>
+                    Quiz-Pack Support Team <br>
+                    55 Alaika Village <br>
+                    Taisha City <br>
+                    Lishia </p>
+            </section>
+            <section class="section-03">
+                <p> We’re always looking to improve, and your feedback is invaluable. If you have ideas for new quizzes or features, or if there’s something you think we could do better, please let us know. We’re here to make Quiz-Pack the best it can be, and your suggestions help us grow. </p>
+                <br>
+                <form>
+                    <textarea name="feedback" id="feedback-01" rows="8" cols="50"> </textarea>
+                    <br>
+                    <button> Submit </button>
+                </form>
+            </section>
+        </main>
+        <script>
+            function openSignupPage()
+            {
+                window.location.href = "signup.html";
+            }
+
+            function openLoginPage()
+            {
+                window.location.href = "login.html";
+            }
+        </script>
+    </body>
+</html>

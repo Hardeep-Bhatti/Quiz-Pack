@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Mathematics Quiz </title>
+        <link rel="stylesheet" href="header-styles.css">
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                overflow-x: hidden;
+                background-image: url("Images/pexels-lucadross-5976404.jpg");
+                background-size: contain;
+                background-attachment: fixed;
+                font-family: cursive;
+                color: whitesmoke;
+            }
+
+            .header-01 section
+            {
+                color: whitesmoke;
+            }
+
+            .main-01
+            {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main-01 form div
+            {
+                margin-top: 3em;
+            }
+
+            input[type="radio"]
+            {
+                accent-color: crimson;
+            }
+
+            .btn-3
+            {
+                background-color: black;
+                color: pink;
+                padding: 0.5em 1em;
+                border: 1px solid;
+                border-radius: 2em 1em 2em 0em;
+                margin: 1.5em 0;
+            }
+
+            .btn-3:hover 
+            {
+                box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+            }
+        </style>
+        <script>
+          function check() {
+            var score = 0;
+            var correctAnswers = {
+              question1: "x = 2",
+              question2: "6",
+              question3: "90",
+              question4: "16",
+              question5: "x = 3 or x = -3",
+              question6: "A = πr^2",
+              question7: "a^2 + b^2 = c^2",
+              question8: "x = -b / (2a)",
+              question9: "e^x",
+              question10: "x = (-b ± √(b^2 - 4ac)) / 2a"
+            };
+            
+            for (var i = 1; i <= 10; i++) {
+              var qName = "question" + i;
+              var selectedOption = document.querySelector('input[name="' + qName + '"]:checked');
+              if (selectedOption && selectedOption.value === correctAnswers[qName]) {
+                score++;
+              }
+            }
+            
+            alert("Your Score is " + score + " out of 10");
+            
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+          }
+        </script>
+    </head>
+    <body>
+        <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="index.html" target="_blank"> Home </a> </li>
+                    <li> <a href="about-us.html" target="_blank"> About Us </a> </li>
+                    <li> <a href="contact-us.html" target="_blank"> Contact Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-01">
+            <form name="quiz" id="quiz">
+              <!-- Mathematics Quiz -->
+              <div>
+                <p>1. Solve for x: 2x + 3 = 7</p>
+                <p><input type="radio" name="question1" value="x = 2"> A. x = 2</p>
+                <p><input type="radio" name="question1" value="x = 3"> B. x = 3</p>
+                <p><input type="radio" name="question1" value="x = 4"> C. x = 4</p>
+                <p><input type="radio" name="question1" value="x = 1"> D. x = 1</p>
+              </div>
+          
+              <div>
+                <p>2. What is the factorial of 4?</p>
+                <p><input type="radio" name="question2" value="24"> A. 24</p>
+                <p><input type="radio" name="question2" value="12"> B. 12</p>
+                <p><input type="radio" name="question2" value="6"> C. 6</p>
+                <p><input type="radio" name="question2" value="4"> D. 4</p>
+              </div>
+          
+              <div>
+                <p>3. What is the sum of the angles in a triangle?</p>
+                <p><input type="radio" name="question3" value="180"> A. 180</p>
+                <p><input type="radio" name="question3" value="90"> B. 90</p>
+                <p><input type="radio" name="question3" value="360"> C. 360</p>
+                <p><input type="radio" name="question3" value="270"> D. 270</p>
+              </div>
+          
+              <div>
+                <p>4. What is the square root of 256?</p>
+                <p><input type="radio" name="question4" value="16"> A. 16</p>
+                <p><input type="radio" name="question4" value="14"> B. 14</p>
+                <p><input type="radio" name="question4" value="18"> C. 18</p>
+                <p><input type="radio" name="question4" value="20"> D. 20</p>
+              </div>
+          
+              <div>
+                <p>5. Solve for x: x^2 - 9 = 0</p>
+                <p><input type="radio" name="question5" value="x = 3 or x = -3"> A. x = 3 or x = -3</p>
+                <p><input type="radio" name="question5" value="x = 9"> B. x = 9</p>
+                <p><input type="radio" name="question5" value="x = 0"> C. x = 0</p>
+                <p><input type="radio" name="question5" value="x = 6 or x = -6"> D. x = 6 or x = -6</p>
+              </div>
+          
+              <div>
+                <p>6. What is the area of a circle with radius 3?</p>
+                <p><input type="radio" name="question6" value="A = πr^2"> A. A = πr^2</p>
+                <p><input type="radio" name="question6" value="A = 2πr"> B. A = 2πr</p>
+                <p><input type="radio" name="question6" value="A = πd"> C. A = πd</p>
+                <p><input type="radio" name="question6" value="A = 4πr^2"> D. A = 4πr^2</p>
+              </div>
+          
+              <div>
+                <p>7. What is the Pythagorean theorem?</p>
+                <p><input type="radio" name="question7" value="a^2 + b^2 = c^2"> A. a^2 + b^2 = c^2</p>
+                <p><input type="radio" name="question7" value="a^2 - b^2 = c^2"> B. a^2 - b^2 = c^2</p>
+                <p><input type="radio" name="question7" value="a + b = c"> C. a + b = c</p>
+                <p><input type="radio" name="question7" value="a / b = c"> D. a / b = c</p>
+              </div>
+          
+              <div>
+                <p>8. For a quadratic equation ax^2 + bx + c = 0, what is the formula for the roots?</p>
+                <p><input type="radio" name="question8" value="x = -b / (2a)"> A. x = -b / (2a)</p>
+                <p><input type="radio" name="question8" value="x = -b ± √(b^2 - 4ac) / 2a"> B. x = -b ± √(b^2 - 4ac) / 2a</p>
+                <p><input type="radio" name="question8" value="x = -b / a"> C. x = -b / a</p>
+                <p><input type="radio" name="question8" value="x = -c / b"> D. x = -c / b</p>
+              </div>
+          
+              <div>
+                <p>9. What is the derivative of e^x?</p>
+                <p><input type="radio" name="question9" value="e^x"> A. e^x</p>
+                <p><input type="radio" name="question9" value="x"> B. x</p>
+                <p><input type="radio" name="question9" value="ln(x)"> C. ln(x)</p>
+                <p><input type="radio" name="question9" value="1/x"> D. 1/x</p>
+              </div>
+          
+              <div>
+                <p>10. What is the quadratic formula used to solve ax^2 + bx + c = 0?</p>
+                <p><input type="radio" name="question10" value="x = (-b ± √(b^2 - 4ac)) / 2a"> A. x = (-b ± √(b^2 - 4ac)) / 2a</p>
+                <p><input type="radio" name="question10" value="x = -b / (2a)"> B. x = -b / (2a)</p>
+                <p><input type="radio" name="question10" value="x = -c / b"> C. x = -c / b</p>
+                <p><input type="radio" name="question10" value="x = √(b^2 - 4ac)"> D. x = √(b^2 - 4ac)</p>
+              </div>
+          
+              <button type="button" class="btn-3" onclick="check()">Submit</button>
+            </form>
+        </main>
+        <script>
+          function openSignupPage()
+          {
+            window.location.href = "signup.html";
+          }
+
+          function openLoginPage()
+          {
+            window.location.href = "login.html";
+          }
+      </script>
+    </body>
+</html>

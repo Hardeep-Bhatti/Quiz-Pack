@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Physics Quiz </title>
+        <link rel="stylesheet" href="header-styles.css">
+        <style>
+            *
+            {
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+            }
+
+            body
+            {
+                height: 100vh;
+                width: 100vw;
+                overflow-x: hidden;
+                background-image: url("Images/pexels-lucadross-5976404.jpg");
+                background-size: contain;
+                background-attachment: fixed;
+                font-family: cursive;
+                color: whitesmoke;
+            }
+
+            .header-01 section
+            {
+                color: whitesmoke;
+            }
+
+            .main-01
+            {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .main-01 form div
+            {
+                margin-top: 3em;
+            }
+
+            input[type="radio"]
+            {
+                accent-color: crimson;
+            }
+
+            .btn-3
+            {
+                background-color: black;
+                color: pink;
+                padding: 0.5em 1em;
+                border: 1px solid;
+                border-radius: 2em 1em 2em 0em;
+                margin: 1.5em 0;
+            }
+
+            .btn-3:hover 
+            {
+                box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+            }
+        </style>
+        <script>
+          function check() {
+            var score = 0;
+            var correctAnswers = {
+              question1: "F = m * a",
+              question2: "9.8 m/s²",
+              question3: "V = I * R",
+              question4: "Ohm",
+              question5: "Law of Energy Conservation",
+              question6: "4.18 J/(g°C)",
+              question7: "3 × 10^8 m/s",
+              question8: "Refraction",
+              question9: "The impossibility of knowing both the position and momentum of a particle precisely at the same time.",
+              question10: "Zero"
+            };
+            
+            for (var i = 1; i <= 10; i++) {
+              var qName = "question" + i;
+              var selectedOption = document.querySelector('input[name="' + qName + '"]:checked');
+              if (selectedOption && selectedOption.value === correctAnswers[qName]) {
+                score++;
+              }
+            }
+            
+            alert("Your Score is " + score + " out of 10");
+            
+            var radios = document.querySelectorAll('input[type="radio"]');
+            radios.forEach(function(radio) {
+                radio.checked = false;
+            });
+          }
+        </script>
+    </head>
+    <body>
+        <header class="header-01">
+            <section>
+                <img src="Images/sakura.png" alt="Flowers Image">
+                <h1> Quiz-Pack </h1>
+                <img src="Images/sakura.png" alt="Flowers Image">
+            </section>
+            <nav>
+                <ul>
+                    <li> <a href="index.html" target="_blank"> Home </a> </li>
+                    <li> <a href="about-us.html" target="_blank"> About Us </a> </li>
+                    <li> <a href="contact-us.html" target="_blank"> Contact Us </a> </li>
+                    <button onclick="openSignupPage()"> Signup </button>
+                    <button onclick="openLoginPage()"> Login </button>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-01">
+            <form name="quiz" id="quiz">
+              <div>
+                <p>1. What is the formula for calculating the force exerted by an object in motion?</p>
+                <p><input type="radio" name="question1" value="F = m * a"> A. F = m * a</p>
+                <p><input type="radio" name="question1" value="F = m * v"> B. F = m * v</p>
+                <p><input type="radio" name="question1" value="F = m * g"> C. F = m * g</p>
+                <p><input type="radio" name="question1" value="F = 1/2 m * v^2"> D. F = 1/2 m * v^2</p>
+              </div>
+          
+              <div>
+                <p>2. If an object is in free fall, what is its acceleration due to gravity near the Earth's surface?</p>
+                <p><input type="radio" name="question2" value="9.8 m/s²"> A. 9.8 m/s²</p>
+                <p><input type="radio" name="question2" value="10 m/s²"> B. 10 m/s²</p>
+                <p><input type="radio" name="question2" value="8.9 m/s²"> C. 8.9 m/s²</p>
+                <p><input type="radio" name="question2" value="9.8 km/s²"> D. 9.8 km/s²</p>
+              </div>
+          
+              <div>
+                <p>3. Ohm's Law relates voltage (V), current (I), and resistance (R). What is the correct formula?</p>
+                <p><input type="radio" name="question3" value="V = I * R"> A. V = I * R</p>
+                <p><input type="radio" name="question3" value="R = V * I"> B. R = V * I</p>
+                <p><input type="radio" name="question3" value="I = V * R"> C. I = V * R</p>
+                <p><input type="radio" name="question3" value="V = I / R"> D. V = I / R</p>
+              </div>
+          
+              <div>
+                <p>4. What is the unit of electric resistance?</p>
+                <p><input type="radio" name="question4" value="Volt"> A. Volt</p>
+                <p><input type="radio" name="question4" value="Ampere"> B. Ampere</p>
+                <p><input type="radio" name="question4" value="Ohm"> C. Ohm</p>
+                <p><input type="radio" name="question4" value="Watt"> D. Watt</p>
+              </div>
+          
+              <div>
+                <p>5. What is the first law of thermodynamics also known as?</p>
+                <p><input type="radio" name="question5" value="Law of Energy Conservation"> A. Law of Energy Conservation</p>
+                <p><input type="radio" name="question5" value="Law of Entropy"> B. Law of Entropy</p>
+                <p><input type="radio" name="question5" value="Law of Heat Transfer"> C. Law of Heat Transfer</p>
+                <p><input type="radio" name="question5" value="Law of Mass Conservation"> D. Law of Mass Conservation</p>
+              </div>
+          
+              <div>
+                <p>6. What is the specific heat capacity of water?</p>
+                <p><input type="radio" name="question6" value="4.18 J/(g°C)"> A. 4.18 J/(g°C)</p>
+                <p><input type="radio" name="question6" value="2.09 J/(g°C)"> B. 2.09 J/(g°C)</p>
+                <p><input type="radio" name="question6" value="1.00 J/(g°C)"> C. 1.00 J/(g°C)</p>
+                <p><input type="radio" name="question6" value="0.90 J/(g°C)"> D. 0.90 J/(g°C)</p>
+              </div>
+          
+              <div>
+                <p>7. What is the speed of light in a vacuum?</p>
+                <p><input type="radio" name="question7" value="3 × 10^8 m/s"> A. 3 × 10^8 m/s</p>
+                <p><input type="radio" name="question7" value="3 × 10^6 m/s"> B. 3 × 10^6 m/s</p>
+                <p><input type="radio" name="question7" value="3 × 10^9 m/s"> C. 3 × 10^9 m/s</p>
+                <p><input type="radio" name="question7" value="3 × 10^7 m/s"> D. 3 × 10^7 m/s</p>
+              </div>
+          
+              <div>
+                <p>8. What phenomenon causes a straw to appear bent when placed in a glass of water?</p>
+                <p><input type="radio" name="question8" value="Refraction"> A. Refraction</p>
+                <p><input type="radio" name="question8" value="Reflection"> B. Reflection</p>
+                <p><input type="radio" name="question8" value="Diffraction"> C. Diffraction</p>
+                <p><input type="radio" name="question8" value="Dispersion"> D. Dispersion</p>
+              </div>
+          
+              <div>
+                <p>9. What is the principle behind the Heisenberg Uncertainty Principle?</p>
+                <p><input type="radio" name="question9" value="The impossibility of knowing both the position and momentum of a particle precisely at the same time."> A. The impossibility of knowing both the position and momentum of a particle precisely at the same time.</p>
+                <p><input type="radio" name="question9" value="The idea that energy is quantized and not continuous."> B. The idea that energy is quantized and not continuous.</p>
+                <p><input type="radio" name="question9" value="The concept that particles can be in multiple states at once."> C. The concept that particles can be in multiple states at once.</p>
+                <p><input type="radio" name="question9" value="The observation that particles can affect each other instantly over large distances."> D. The observation that particles can affect each other instantly over large distances.</p>
+              </div>
+          
+              <div>
+                <p>10. What is the rest mass of a photon?</p>
+                <p><input type="radio" name="question10" value="Zero"> A. Zero</p>
+                <p><input type="radio" name="question10" value="1 kg"> B. 1 kg</p>
+                <p><input type="radio" name="question10" value="0.1 kg"> C. 0.1 kg</p>
+                <p><input type="radio" name="question10" value="1 g"> D. 1 g</p>
+              </div>
+          
+              <input type="button" class="btn-3" value="Submit" onclick="check()">
+            </form>
+        </main>
+        <script>
+          function openSignupPage()
+          {
+            window.location.href = "signup.html";
+          }
+
+          function openLoginPage()
+          {
+            window.location.href = "login.html";
+          }
+      </script>
+    </body>
+</html>
